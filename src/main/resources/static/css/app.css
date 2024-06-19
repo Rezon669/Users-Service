@@ -1,0 +1,45 @@
+@charset "ISO-8859-1";
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:rgb(255, 255, 255);  
+    font-family: 'Arial';  
+}  
+.home{  
+        width: 450px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px;  
+        padding: 80px;  
+        background: #000080;  
+        border-radius: 15px ;  
+          
+}  
+h1{  
+    text-align: center;   
+    color: #277582;  
+    padding: 2px;  
+} 
+  
+label{  
+    color: #08ffd1;  
+    font-size: 22px;  
+}  
+ 
+a{  
+    float: left;
+    color: #00ffff;  
+    background-color: none; 
+    text-decoration: none; 
+    font-size: 20px;
+} 
+.button-container-div {
+            text-align: right;
+            border: 1px solid coral;
+           width: 30px;
+            height: 20px;
+            margin: auto;
+            background-color: none;
+            color: #00ffff;
+        }

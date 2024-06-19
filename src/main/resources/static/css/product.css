@@ -1,0 +1,77 @@
+@charset "ISO-8859-1";
+
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:rgb(255, 255, 255);  
+    font-family: 'Arial';  
+}    
+.addproduct{  
+          width: 450px;   
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px;  
+        padding: 80px;  
+        background: #000080;  
+        border-radius: 15px ;   
+          
+}  
+h2{  
+    text-align: center;  
+    color: #277582;  
+    padding: 2px;  
+    font-size: 40px; 
+} 
+ 
+label{  
+    color: #08ffd1;  
+    font-size: 20px;  
+}  
+#name,#price,#quantity,#category, #searchkeyword{ 
+	text-align: left;
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 15px; 
+    
+}  
+ 
+
+#submit{  
+    width: 200px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 30px;  
+    padding-left: 7px;  
+    color: blue;  
+  font-size: 20px; 
+  
+}
+#submit:hover
+{
+  background-color: #c0c0c0;
+}  
+span{  
+    color: white;  
+    font-size: 17px;  
+}  
+ t{
+ text-align: left;
+    color: #ff0080;  
+    background-color: none; 
+    text-decoration: none; 
+    font-size: 20px;
+}
+
+a:hover, a:active {
+  background-color: #408080;
+} 
+a{
+ text-align: left;
+    color: #00ffff;  
+    background-color: none; 
+    text-decoration: none; 
+    font-size: 20px;
+}

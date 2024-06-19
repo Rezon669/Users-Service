@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:rgb(255, 255, 255);  
+    font-family: 'Arial';  
+}   
+h2{  
+    text-align: center;  
+    color: #277582;  
+    padding: 2px;  
+} 
+a{  
+    
+    color: #0080ff;  
+    background-color: none; 
+    text-decoration: none; 
+    font-size: 22px;
+}  
