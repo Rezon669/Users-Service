@@ -1,16 +1,11 @@
 package com.ecom.usersservice.model;
 
-import org.springframework.stereotype.Component;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
-
 @Entity
-@Component
 
 @Table(name = "users")
 
