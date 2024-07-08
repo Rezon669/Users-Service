@@ -27,8 +27,8 @@ public class JWTUtil {
 
 	public String validateTokenAndRetrieveSubject(String token) throws JWTVerificationException {
 
-		JWTVerifier verifier = JWT.require(Algorithm.HMAC256(secret)).withSubject("User Details").withIssuer("MicroService-Project")
-				.acceptExpiresAt(System.currentTimeMillis()).build();
+		JWTVerifier verifier = JWT.require(Algorithm.HMAC256(secret)).withSubject("User Details")
+				.withIssuer("MicroService-Project").acceptExpiresAt(System.currentTimeMillis()).build();
 
 		DecodedJWT jwt = verifier.verify(token);
 

@@ -157,7 +157,6 @@ public class UsersController {
 			return ResponseEntity.badRequest().body(e + "");
 		}
 	}
-
 	@GetMapping("/auth/logout")
 	public String logout(HttpServletResponse response) {
 		// method to perform logout validation

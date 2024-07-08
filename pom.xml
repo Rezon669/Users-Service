@@ -41,18 +41,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-sleuth -->
-<dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-sleuth</artifactId>
-    <version>3.1.11</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-sleuth-zipkin -->
-<dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-sleuth-zipkin</artifactId>
-    <version>3.1.11</version>
-</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-sleuth -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+			<version>3.1.11</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-sleuth-zipkin -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
+			<version>3.1.11</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -76,7 +78,7 @@
 			<artifactId>jjwt-jackson</artifactId>
 			<version>0.11.5</version>
 		</dependency>
-		
+
 		<!-- Micrometer Tracing with Brave -->
 		<dependency>
 			<groupId>io.micrometer</groupId>
@@ -95,15 +97,15 @@
 			<artifactId>spring-rabbit</artifactId>
 		</dependency>
 		<dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-</dependency>
-				<dependency>
-    <groupId>io.netty</groupId>
-    <artifactId>netty-resolver-dns-native-macos</artifactId>
-  <!-- or the version compatible with your Netty version -->
-    <scope>runtime</scope>
-</dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-resolver-dns-native-macos</artifactId>
+			<!-- or the version compatible with your Netty version -->
+			<scope>runtime</scope>
+		</dependency>
 
 		<!-- Mail dependencies -->
 		<dependency>
