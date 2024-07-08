@@ -219,11 +219,14 @@ JwtService jwtTokenService;
             if (authentication.isAuthenticated()) {
                // jwtToken = jwtService.generateToken(email, role);
             	
+            	System.out.println(email +""+ role);
+            	
             	jwtToken = jwtTokenService.generateToken(email, role);
             	
             	
             }
         } catch (Exception e) {
+        	System.out.println(e);
             throw new CustomException("Invalid Login Credentials");
         }
       
