@@ -2,8 +2,6 @@ package com.ecom.usersservice.dao;
 
 import java.util.Optional;
 
-
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -17,11 +15,11 @@ import com.ecom.usersservice.model.Users;
 public interface UsersRepository extends JpaRepository<Users, Long> {
 
 	Optional<Users> findByUsername(String username);
-	
-	//String findByUsername(String username);
+
+	// String findByUsername(String username);
 
 	public Optional<Users> findByEmailid(String emailid);
-	
+
 	@Query("SELECT u.userid from Users u WHERE u.emailid = :emailid")
 	public long findUserid(String emailid);
 
@@ -29,7 +27,7 @@ public interface UsersRepository extends JpaRepository<Users, Long> {
 	public String findEmailid(String emailid);
 
 	@Modifying
-	 @Transactional
+	@Transactional
 	@Query("UPDATE Users u SET u.password = :password WHERE u.emailid = :email")
 	void updatePasswordByEmailid(@Param("password") String password, @Param("email") String email);
 

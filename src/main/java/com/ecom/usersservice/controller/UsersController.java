@@ -17,25 +17,25 @@ import com.ecom.usersservice.dao.UsersRepository;
 import com.ecom.usersservice.exception.CustomException;
 import com.ecom.usersservice.model.Login;
 import com.ecom.usersservice.model.Users;
-import com.ecom.usersservice.serviceimpl.UsersServiceImpl;
+import com.ecom.usersservice.service.UsersService;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
-@RequestMapping("/easybuy/user")
+@RequestMapping("/ecom/user")
 
 public class UsersController {
 
 	private static final Logger logger = LogManager.getLogger(UsersController.class);
-	// public String jwttoken;
+
 	@Autowired
 	UsersRepository usersRepository;
 
 	public String jwttoken;
 
 	@Autowired
-	UsersServiceImpl usersService;
+	UsersService usersService;
 
 //	public UsersController(UsersService usersService) {
 //        this.usersService = usersService;
@@ -44,11 +44,6 @@ public class UsersController {
 //    public UsersController(UsersService usersService) {
 //        this.usersService = usersService;
 //    }
-
-	@GetMapping("/signin")
-	public String showLoginpage() {
-		return "signin";
-	}
 
 	@PostMapping("/createaccount")
 	public ResponseEntity<String> createUser(Users user, Model model) throws CustomException {
@@ -75,11 +70,6 @@ public class UsersController {
 
 	}
 
-	@GetMapping("/admin/resetpassword")
-	public String emailVerification() {
-		return "resetpassword";
-	}
-
 	@PostMapping("/updatepassword")
 	public String resetPassword(@RequestParam(value = "emailid", required = true) String emailid,
 			@RequestParam(value = "password", required = true) String password,
@@ -100,19 +90,6 @@ public class UsersController {
 		}
 	}
 
-	@GetMapping("/signup")
-	public String signup() {
-
-		return "signup";
-	}
-
-	@GetMapping("/auth/backtohome")
-	public String backtoHome() {
-
-		return "welcome";
-
-	}
-
 	@GetMapping("/auth/getUsers")
 	public List<Users> getUsers() {
 		List<Users> list = usersService.getAllUsers();
@@ -125,46 +102,23 @@ public class UsersController {
 	public ResponseEntity<String> loginValidation(Login login, Model model, HttpServletResponse response)
 			throws CustomException {
 
+		logger.info("Validating the user details");
 		try {
 			jwttoken = usersService.loginValidation(login.getEmailid(), login.getPassword());
 
 			if (jwttoken.isEmpty()) {
 
-				// model.addAttribute("errorMessage", "invalid Login Credentials");
-				// return "signin";
-
 				return ResponseEntity.notFound().build();
-
 			}
 
-//			Cookie jwtcookie = new Cookie("token", jwttoken);
-//
-//			// Set additional cookie attributes
-//			jwtcookie.setHttpOnly(true); // Makes the cookie accessible only by the server
-//			jwtcookie.setSecure(true); // Ensures the cookie is sent only over HTTPS
-//			jwtcookie.setPath("/"); // Restricts the cookie to the root path
-//			jwtcookie.setMaxAge(3600);
-//
-//			response.addCookie(jwtcookie);
-			// return "welcome";
 			return ResponseEntity.ok("Login Successful, Please find the JWT token :  " + jwttoken);
 
 		} catch (CustomException e) {
 
-			// model.addAttribute("errorMessage", e.getMessage());
 			logger.error(e);
-			// return "signin";
+
 			return ResponseEntity.badRequest().body(e + "");
 		}
-	}
-	@GetMapping("/auth/logout")
-	public String logout(HttpServletResponse response) {
-		// method to perform logout validation
-		Cookie jwtCookie = new Cookie("token", "");
-		jwtCookie.setMaxAge(0);
-		jwtCookie.setPath("/");
-		response.addCookie(jwtCookie);
-		return "signin"; // redirect to the signin page after logout
 	}
 
 }

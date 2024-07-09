@@ -1,4 +1,4 @@
-package com.ecom.usersservice.serviceimpl;
+package com.ecom.usersservice.service;
 
 import java.util.Collections;
 import java.util.Optional;
