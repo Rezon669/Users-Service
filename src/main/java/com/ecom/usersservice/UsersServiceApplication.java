@@ -12,7 +12,6 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan
 @EnableFeignClients(basePackages = "com.ecom.usersservice.feignclient")
 @EnableDiscoveryClient
-
 public class UsersServiceApplication {
 
 	public static void main(String[] args) {
